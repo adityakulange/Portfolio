@@ -11,7 +11,8 @@ const profileSchema = mongoose.Schema({
     linkedin: { type: String },
     resumeUrl: { type: String },
     imageUrl: { type: String },
-    favicon: { type: String }
+    favicon: { type: String },
+    theme: { type: String, default: 'inferno' }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Profile', profileSchema);

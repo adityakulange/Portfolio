@@ -41,9 +41,9 @@ const Contact = () => {
                 {/* Contact Info Section */}
                 <div className="flex flex-col justify-between space-y-8">
                     <div>
-                        <h2 className="text-4xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent mb-4">
+                        <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent mb-4">
                             Let's Connect
-                        </h2>
+                        </h1>
                         <p className="text-gray-400 leading-relaxed text-lg">
                             Have a project in mind or just want to chat? I'm always open to discussing new ideas, opportunities, and tech.
                         </p>

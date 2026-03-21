@@ -31,6 +31,7 @@ const updateProfile = async (req, res) => {
             profile.resumeUrl = req.body.resumeUrl || profile.resumeUrl;
             profile.imageUrl = req.body.imageUrl || profile.imageUrl;
             profile.favicon = req.body.favicon || profile.favicon;
+            profile.theme = req.body.theme || profile.theme;
 
             const updatedProfile = await profile.save();
             res.json(updatedProfile);

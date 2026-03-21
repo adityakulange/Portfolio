@@ -39,9 +39,10 @@ const Experience = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-12 relative z-10">
-            <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+            <SEO title="Experience" description="My professional work experience and industry journey." />
+            <h1 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
                 Experience
-            </h2>
+            </h1>
             
             <div className="max-w-4xl mx-auto space-y-8 relative">
 

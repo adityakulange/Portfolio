@@ -104,7 +104,8 @@ const Projects = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-12">
-            <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">Featured Projects</h2>
+            <SEO title="Projects" description="Explore my featured projects in full-stack development, AI, and more." />
+            <h1 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">Featured Projects</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project) => (
                     <ProjectCard key={project._id} project={project} />

@@ -73,9 +73,10 @@ const Skills = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-12 relative z-10">
-            <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+            <SEO title="Skills & Certifications" description="My technical arsenal including frontend, backend, and devops tools." />
+            <h1 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
                 Technical Arsenal
-            </h2>
+            </h1>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {skillCategories.map((cat) => (
