@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
 import Loader from '../../components/shared/Loader';
+import SEO from '../../components/shared/SEO';
 import { 
     FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaJava, FaGitAlt, FaDocker, FaAws, FaDatabase, FaCode, FaLaptopCode, FaServer, FaAward, FaExternalLinkAlt
 } from 'react-icons/fa';

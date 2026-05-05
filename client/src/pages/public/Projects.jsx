@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import api from '../../services/api';
 import Loader from '../../components/shared/Loader';
+import SEO from '../../components/shared/SEO';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import SpotlightCard from '../../components/shared/SpotlightCard';
 

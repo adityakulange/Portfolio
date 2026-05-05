@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
 import Loader from '../../components/shared/Loader';
+import SEO from '../../components/shared/SEO';
 import { FaGraduationCap, FaUniversity, FaCalendarAlt, FaBuilding, FaStar } from 'react-icons/fa';
 
 import { motion } from 'framer-motion';
