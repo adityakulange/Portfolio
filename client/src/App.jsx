@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { ProfileProvider } from './context/ProfileContext';
 import Layout from './components/shared/Layout';
 import RequireAuth from './components/shared/RequireAuth';
 
@@ -33,6 +34,7 @@ function App() {
     <HelmetProvider>
       <AuthProvider>
       <ThemeProvider>
+        <ProfileProvider>
         <Router>
           <ScrollToTop />
           <Routes>
@@ -66,6 +68,7 @@ function App() {
         </Routes>
 
         </Router>
+        </ProfileProvider>
       </ThemeProvider>
     </AuthProvider>
     </HelmetProvider>

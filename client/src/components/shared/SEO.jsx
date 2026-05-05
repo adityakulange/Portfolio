@@ -1,10 +1,16 @@
 import { Helmet } from 'react-helmet-async';
+import { useProfile } from '../../context/ProfileContext';
 
 const SEO = ({ title, description, image, url }) => {
-    const siteTitle = title ? `${title} | Mahesh Sumb` : 'Mahesh Sumb | Full Stack Developer';
-    const siteDescription = description || 'Portfolio of Mahesh Sumb, a Full Stack Developer specializing in MERN stack, Spring Boot, and modern web development.';
-    const siteUrl = url || 'https://www.mahehsumb.in'; 
-    const siteImage = image || 'https://res.cloudinary.com/dcw8dat4r/image/upload/v1769936320/portfolio/cy38rgy1awcwqwzbbzdw.png'; 
+    const { profile, loadingProfile } = useProfile();
+    
+    const profileName = profile?.name || 'Portfolio';
+    const siteTitle = title 
+        ? (loadingProfile ? title : `${title} | ${profileName}`) 
+        : (loadingProfile ? 'Loading...' : `${profileName} | Full Stack Developer`);
+    const siteDescription = description || profile?.about || `Portfolio of ${profileName}, a Full Stack Developer specializing in modern web development.`;
+    const siteUrl = url || import.meta.env.VITE_FRONTEND_URL || 'https://www.mahehsumb.in'; 
+    const siteImage = image || profile?.imageUrl || 'https://res.cloudinary.com/dcw8dat4r/image/upload/v1769936320/portfolio/cy38rgy1awcwqwzbbzdw.png'; 
 
     // Proper canonical URL construction
     const canonicalUrl = url || `${siteUrl}${window.location.pathname}`;
@@ -13,14 +19,14 @@ const SEO = ({ title, description, image, url }) => {
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Mahesh Sumb",
+        "name": profileName,
         "url": siteUrl,
         "image": siteImage,
         "sameAs": [
-            "https://linkedin.com/in/mahesh-sumb",
-            "https://github.com/maheshsumb"
-        ],
-        "jobTitle": "Full Stack Developer",
+            profile?.linkedin || "",
+            profile?.github || ""
+        ].filter(Boolean),
+        "jobTitle": profile?.title || "Full Stack Developer",
         "worksFor": {
             "@type": "Organization",
             "name": "Freelance"
@@ -38,8 +44,8 @@ const SEO = ({ title, description, image, url }) => {
             {image && <link rel="icon" type="image/png" href={image} />} 
             
             <meta name="description" content={siteDescription} />
-            <meta name="author" content="Mahesh Sumb" />
-            <meta name="keywords" content="Mahesh Sumb, Mahesh, Sumb, Full Stack Developer, MERN Stack, Spring Boot, React Developer, Software Engineer, Portfolio" />
+            <meta name="author" content={profileName} />
+            <meta name="keywords" content={`${profileName}, Full Stack Developer, Software Engineer, Portfolio, ${profile?.skills?.join(', ') || ''}`} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content="website" />
