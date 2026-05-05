@@ -12,15 +12,21 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+const allowedOrigins = [
+    'http://localhost:5173', 
+    'https://maheshsumb.in',
+    'https://www.maheshsumb.in',
+    'https://portfolio-bice-kappa-21.vercel.app',
+    'https://mahehsumb.in',
+    'https://www.mahehsumb.in'
+];
+
+if (process.env.FRONTEND_URL) {
+    allowedOrigins.push(process.env.FRONTEND_URL);
+}
+
 app.use(cors({
-    origin: [
-        'http://localhost:5173', 
-        'https://maheshsumb.in',
-        'https://www.maheshsumb.in',
-        'https://portfolio-bice-kappa-21.vercel.app',
-        'https://mahehsumb.in',
-        'https://www.mahehsumb.in'
-    ],
+    origin: allowedOrigins,
     credentials: true
 }));
 
