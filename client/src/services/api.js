@@ -10,7 +10,10 @@ api.interceptors.response.use(
   (error) => {
     // Handle global errors, e.g., 401 logout
     if (error.response && error.response.status === 401) {
-        // Optional: Trigger logout or redirect
+        // Clear local storage and redirect to login
+        if (window.location.pathname !== '/login') {
+            window.location.href = '/login';
+        }
     }
     return Promise.reject(error);
   }
